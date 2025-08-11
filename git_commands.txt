@@ -59,3 +59,28 @@ Git allows you to revert changes depending on their state.
 | `git reset --soft HEAD~1` | Undo last commit, keep changes staged.            | `git reset --soft HEAD~1` |
 | `git reset --hard HEAD~1` | Undo last commit, discard changes.                | `git reset --hard HEAD~1` |
 
+
+6. Tags
+Tags are used to mark specific points in history (e.g., releases).
+| Command                         | Description             | Example                              |
+| ------------------------------- | ----------------------- | ------------------------------------ |
+| `git tag`                       | List all tags.          | `git tag`                            |
+| `git tag <tagname>`             | Create lightweight tag. | `git tag v1.0`                       |
+| `git tag -a <tagname> -m "msg"` | Create annotated tag.   | `git tag -a v1.0 -m "First release"` |
+| `git push origin <tagname>`     | Push single tag.        | `git push origin v1.0`               |
+| `git push origin --tags`        | Push all tags.          | `git push origin --tags`             |
+
+7. Merge vs Rebase
+Both integrate changes, but differently.
+| Feature      | Merge                              | Rebase                                 |
+| ------------ | ---------------------------------- | -------------------------------------- |
+| **History**  | Keeps all commits & merge commit.  | Creates linear history.                |
+| **Command**  | `git merge branch-name`            | `git rebase branch-name`               |
+| **Use Case** | When you want to preserve history. | When you want a clean, linear history. |
+
+8. Common Workflows
+Feature Branch Workflow → Create branch → work → PR → merge to main.
+
+Gitflow Workflow → Uses develop, release, hotfix branches.
+
+Fork & Pull → Fork repo → clone → make changes → push → PR.
