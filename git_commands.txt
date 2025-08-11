@@ -10,3 +10,52 @@ Git is a distributed version control system that tracks changes in source code, 
 | `git clone <url>`                                    | Clone an existing repository from a remote URL.    | `git clone https://github.com/user/repo.git`           |
 | `git status`                                         | Show changes in the working directory.             | `git status`                                           |
 | `git help <command>`                                 | Get help for a specific command.                   | `git help commit`                                      |
+
+
+2. Staging & Committing
+
+Git has three areas: Working Directory → Staging Area → Repository.
+
+git add moves changes to staging.
+
+git commit records changes in the repository.
+
+| Command                | Description                           | Example                          |
+| ---------------------- | ------------------------------------- | -------------------------------- |
+| `git add <file>`       | Stage a specific file.                | `git add main.go`                |
+| `git add .`            | Stage all files.                      | `git add .`                      |
+| `git commit -m "msg"`  | Commit staged changes with a message. | `git commit -m "Initial commit"` |
+| `git commit -am "msg"` | Stage and commit all tracked files.   | `git commit -am "Fix bug"`       |
+
+3. Branching
+Branches allow you to work on features independently from main without affecting it.
+
+| Command                  | Description                  | Example                         |
+| ------------------------ | ---------------------------- | ------------------------------- |
+| `git branch`             | List all branches.           | `git branch`                    |
+| `git branch <name>`      | Create new branch.           | `git branch feature-1`          |
+| `git checkout <name>`    | Switch branch (old).         | `git checkout feature-1`        |
+| `git switch <name>`      | Switch branch (new).         | `git switch feature-1`          |
+| `git checkout -b <name>` | Create and switch to branch. | `git checkout -b login-feature` |
+| `git merge <branch>`     | Merge branch into current.   | `git merge feature-1`           |
+| `git branch -d <name>`   | Delete branch.               | `git branch -d feature-1`       |
+
+4. Remote Repositories
+Remote repos (like GitHub, GitLab) store code online for collaboration.
+| Command                       | Description                        | Example                                                  |
+| ----------------------------- | ---------------------------------- | -------------------------------------------------------- |
+| `git remote -v`               | List remotes.                      | `git remote -v`                                          |
+| `git remote add origin <url>` | Add a remote.                      | `git remote add origin https://github.com/user/repo.git` |
+| `git push origin <branch>`    | Push branch to remote.             | `git push origin main`                                   |
+| `git pull origin <branch>`    | Pull and merge latest changes.     | `git pull origin main`                                   |
+| `git fetch`                   | Download new data without merging. | `git fetch`                                              |
+
+5. Undoing Changes
+Git allows you to revert changes depending on their state.
+| Command                   | Description                                       | Example                   |
+| ------------------------- | ------------------------------------------------- | ------------------------- |
+| `git restore <file>`      | Discard uncommitted changes in working directory. | `git restore index.html`  |
+| `git reset <file>`        | Unstage a file.                                   | `git reset main.go`       |
+| `git reset --soft HEAD~1` | Undo last commit, keep changes staged.            | `git reset --soft HEAD~1` |
+| `git reset --hard HEAD~1` | Undo last commit, discard changes.                | `git reset --hard HEAD~1` |
+
